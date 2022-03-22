@@ -1,4 +1,4 @@
-export type Events = {
+export type Launch = {
     id: string,
     provider: string
 

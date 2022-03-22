@@ -1,7 +1,7 @@
-import { Events } from "./events"
-import { Launches } from "./launches"
+import { Event } from "./event"
+import { Launch } from "./launche"
 
-export type Articles = {
+export type Article = {
 
     id: number,
     featured: false,
@@ -11,7 +11,7 @@ export type Articles = {
     newsSite: string,
     summary: string,
     publishedAt: string,
-    launches?: Launches[],
-    events?: Events[]
+    launches?: Launch[],
+    events?: Event[]
 
 }

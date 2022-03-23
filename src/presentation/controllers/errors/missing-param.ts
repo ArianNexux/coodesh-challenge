@@ -1,5 +1,5 @@
-export class MissingParam extends Error{
-    constructor(param){
+export class MissingParam extends Error {
+    constructor(param) {
         super(`Missing parameter: ${param}`)
     }
 }

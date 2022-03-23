@@ -1,5 +1,5 @@
 import { Article } from "../entities/article";
 
-export interface CreateArticle{
+export interface CreateArticle {
     addArticle(article: Article): Promise<Article>
 }

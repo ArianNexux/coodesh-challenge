@@ -1,5 +1,5 @@
 import { Article } from "../entities/article";
 
 export interface ListArticleById{
-    listArticleById(id: string): Promise<Article>
+    listArticleById(id: number): Promise<Article>
 }

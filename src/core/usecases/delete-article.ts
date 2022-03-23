@@ -1,5 +1,5 @@
 import { Article } from "../entities/article";
 
 export interface DeleteArticle{
-    deleteArticle(id: string): Promise<boolean>
+    deleteArticle(id: number): Promise<boolean>
 }

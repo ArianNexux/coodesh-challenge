@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "ts-node-dev ./main/server.ts",
+    "dev": "ts-node-dev ./src/main/server.ts",
     "build": "webpack -p"
   },
   "keywords": [],

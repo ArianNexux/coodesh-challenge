@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "jest",
     "dev": "ts-node-dev ./main/server.ts",
     "build": "webpack -p"
   },

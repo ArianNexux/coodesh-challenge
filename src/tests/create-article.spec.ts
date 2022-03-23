@@ -41,6 +41,40 @@ describe('Create Article', () => {
         const httpResponse: HttpResponse = await sut.handle(httpRequest)
         expect(httpResponse.statusCode).toBe(422)
     })
+
+    test('should return 422 if no imageUrl is provided', async () => {
+        const sut = FactoryCreateArticleController()
+        const httpRequest: HttpRequest = {
+            body: {
+                id: 1,
+                featured: true,
+                title: "teste",
+                url: "teste",
+                newsSite: "teste",
+                summary: "teste",
+                publishedAt: "2021-05-13T00:48:12.000Z"
+            }
+        }
+        const httpResponse: HttpResponse = await sut.handle(httpRequest)
+        expect(httpResponse.statusCode).toBe(422)
+    })
+
+    test('should return 422 if no newsSite is provided', async () => {
+        const sut = FactoryCreateArticleController()
+        const httpRequest: HttpRequest = {
+            body: {
+                id: 1,
+                featured: true,
+                title: "teste",
+                url: "teste",
+                imageUrl: "teste",
+                summary: "teste",
+                publishedAt: "2021-05-13T00:48:12.000Z"
+            }
+        }
+        const httpResponse: HttpResponse = await sut.handle(httpRequest)
+        expect(httpResponse.statusCode).toBe(422)
+    })
     afterAll(async () => {
         await connection.close()
     })

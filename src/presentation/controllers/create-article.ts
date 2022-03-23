@@ -10,15 +10,13 @@ export default class CreateArticleController implements Controller {
     }
 
     async handle(request: HttpRequest): Promise<HttpResponse> {
-        const requiredFields = ['title'];
-        for (const field in requiredFields) {
-            if (!request.body[field]) {
-                return unprocessableEntity(field)
-            }
+        const requiredFields = ["title", "url"];
+        for (let index = 0; index < requiredFields.length; index++) {
+            if (!request.body[requiredFields[index]])
+                return unprocessableEntity(requiredFields[index])
         }
 
         const res = await this.service.handle(request.body)
-
         return ok(res);
     }
 

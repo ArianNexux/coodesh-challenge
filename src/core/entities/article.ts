@@ -2,7 +2,6 @@ import { Event } from "./event"
 import { Launch } from "./launche"
 
 export type Article = {
-
     id: number,
     featured: false,
     title: string,

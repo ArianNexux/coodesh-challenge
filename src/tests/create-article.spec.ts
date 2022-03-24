@@ -5,9 +5,7 @@ import { HttpRequest, HttpResponse } from '../presentation/controllers/contracts
 
 
 describe('Create Article', () => {
-    beforeAll(async () => {
-        await connect(`mongodb+srv://coodesh:${process.env.DB_PASSWORD}@cluster0.twujv.mongodb.net/myFirstDatabase`)
-    })
+
     test('should return 422 if no title is provided', async () => {
         const sut = FactoryCreateArticleController()
         const httpRequest: HttpRequest = {
@@ -109,7 +107,5 @@ describe('Create Article', () => {
         const httpResponse: HttpResponse = await sut.handle(httpRequest)
         expect(httpResponse.statusCode).toBe(422)
     })
-    afterAll(async () => {
-        await connection.close()
-    })
+
 })

@@ -4,7 +4,6 @@ import express from 'express'
 import { ArticlesRoutes } from './articles.routes'
 
 export const app = express()
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(ArticlesRoutes)

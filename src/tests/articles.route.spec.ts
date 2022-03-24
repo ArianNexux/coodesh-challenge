@@ -23,8 +23,24 @@ describe('Test routes of articles', () => {
         expect(res.statusCode).toBe(200)
     })
 
-    test('should return a single article', async () => {
-        const res: HttpResponse = await request(app).get("/articles/1")
+    test('should update a single article', async () => {
+        const res: HttpResponse = await request(app)
+            .put("/articles/1")
+            .send({
+                id: 1,
+                featured: true,
+                title: "teste-update",
+                url: "teste-update",
+                imageUrl: "teste-update",
+                newsSite: "teste-update",
+                summary: "teste-update",
+                publishedAt: "2021-05-13T00:48:12.000Z"
+            }).set('Content-Type', 'application\/json')
+        expect(res.statusCode).toBe(200)
+    })
+
+    test('should return a list of articles', async () => {
+        const res: HttpResponse = await request(app).get("/articles")
         expect(res.statusCode).toBe(200)
     })
 
@@ -33,10 +49,12 @@ describe('Test routes of articles', () => {
         expect(res.statusCode).toBe(200)
     })
 
-    test('should delete a single article', async () => {
+    test('should delete an article', async () => {
         const res: HttpResponse = await request(app).delete("/articles/1")
         expect(res.statusCode).toBe(200)
     })
+
+
 
     afterAll(async () => {
         await connection.close()

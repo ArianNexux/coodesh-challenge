@@ -32,6 +32,12 @@ describe('Test routes of articles', () => {
         const res: HttpResponse = await request(app).get("/articles/1")
         expect(res.statusCode).toBe(200)
     })
+
+    test('should delete a single article', async () => {
+        const res: HttpResponse = await request(app).delete("/articles/1")
+        expect(res.statusCode).toBe(200)
+    })
+
     afterAll(async () => {
         await connection.close()
     })

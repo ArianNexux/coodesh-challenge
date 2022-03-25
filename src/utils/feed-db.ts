@@ -1,6 +1,7 @@
 import axios from "axios";
-
-(async function () {
+import { schedule } from 'node-cron'
+import ''
+async function jobToSchedule() {
     try {
         const { status, data } = await axios.get('https://api.spaceflightnewsapi.net/v3/articles')
         if (status == 200)
@@ -11,5 +12,6 @@ import axios from "axios";
         console.log(err.getMessage())
     }
 
-})()
+}
 
+export const job = schedule("* * 9 * **", jobToSchedule)

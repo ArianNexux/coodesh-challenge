@@ -6,6 +6,9 @@ import { job } from '../utils/feed-db'
 export const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "Back - end Challenge 2021 🏅 - Space Flight News" })
+})
 app.use(ArticlesRoutes)
 connect(`mongodb+srv://coodesh:${process.env.DB_PASSWORD}@cluster0.twujv.mongodb.net/myFirstDatabase`).then(() => {
     app.listen(3000, function () {

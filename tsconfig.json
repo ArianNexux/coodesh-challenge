@@ -5,6 +5,8 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
+    "outDir": "./build",
+    "rootDir": ".",
     "skipLibCheck": true,
     "lib": [
       "dom",
